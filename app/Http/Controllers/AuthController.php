@@ -17,7 +17,7 @@ class AuthController extends Controller
     {
         $user = Socialite::driver('discord')->stateless()->user();
 
-        return response()->json($user);
+        return view('profile', compact('user'));
     }
 
     public function redirectTwitch()
@@ -29,6 +29,6 @@ class AuthController extends Controller
     {
         $user = Socialite::driver('twitch')->stateless()->user();
 
-        return response()->json($user);
+        return view('profile', compact('user'));
     }
 }
