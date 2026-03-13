@@ -15,7 +15,7 @@ class AuthController extends Controller
 
     public function handleDiscord()
     {
-        $user = Socialite::driver('discord')->user();
+        $user = Socialite::driver('discord')->stateless()->user();
 
         return response()->json($user);
     }
@@ -27,7 +27,7 @@ class AuthController extends Controller
 
     public function handleTwitch()
     {
-        $user = Socialite::driver('twitch')->user();
+        $user = Socialite::driver('twitch')->stateless()->user();
 
         return response()->json($user);
     }
